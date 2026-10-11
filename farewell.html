@@ -1,0 +1,287 @@
+<html style="margin:0;padding:0;">
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+(function(){
+  var s = document.createElement('style');
+  s.textContent = ':root{--bg:#f0f9ff;--card:#ffffff;--text:#0c4a6e;--muted:#0369a1;--accent:#0ea5e9;--accent-soft:rgba(14,165,233,.14);--accent2:#38bdf8;--accent2-soft:rgba(56,189,248,.14);--border:rgba(14,165,233,.18)}'
+    + '@keyframes floatY{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-18px) rotate(6deg)}}'
+    + '@keyframes floatY2{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(-8deg)}}'
+    + '@keyframes drift{0%{transform:translateX(0) translateY(0) rotate(0deg);opacity:.7}50%{opacity:1}100%{transform:translateX(60px) translateY(-40px) rotate(15deg);opacity:0}}'
+    + '@keyframes seatPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(14,165,233,.7)}50%{transform:scale(1.35);box-shadow:0 0 0 8px rgba(14,165,233,0)}}'
+    + '@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}'
+    + '@keyframes ticketIn{from{opacity:0;transform:translateY(30px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}'
+    + '.reveal{opacity:0;animation:fadeUp .7s ease forwards}'
+    + '.reveal:nth-child(2){animation-delay:.12s}.reveal:nth-child(3){animation-delay:.24s}.reveal:nth-child(4){animation-delay:.36s}.reveal:nth-child(5){animation-delay:.48s}'
+    + '.plane1{animation:floatY 5s ease-in-out infinite}.plane2{animation:floatY2 6.5s ease-in-out infinite}.plane3{animation:floatY 7s ease-in-out infinite}'
+    + '.seat{width:22px;height:22px;border-radius:5px 5px 2px 2px;display:inline-flex;align-items:center;justify-content:center;font-size:8px;cursor:pointer;transition:transform .15s, background .15s;user-select:none}'
+    + '.seat:hover{transform:scale(1.25)}'
+    + '.seat.highlight{animation:seatPulse 1s ease-in-out infinite;background:#f59e0b!important;color:#fff!important;z-index:5;position:relative}'
+    + '.seat.selected{background:#0ea5e9!important;color:#fff;box-shadow:0 0 0 2px #0369a1}'
+    + '.grad-cap{animation:floatY2 6s ease-in-out infinite}'
+    + '.ticket-card{animation:ticketIn .5s ease forwards}'
+    + '.song-card{transition:transform .25s, box-shadow .25s}.song-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(14,165,233,.18)}';
+  document.head.appendChild(s);
+})();
+</script>
+<div style="background-color:transparent;box-sizing:border-box;">
+<div style="font-family:'Urbanist','Noto Sans SC',sans-serif;background:linear-gradient(180deg,#e0f2fe 0%,#f0f9ff 40%,#ffffff 100%);color:var(--text);min-height:100%;">
+
+<!-- ============ HERO ============ -->
+<div class="reveal relative overflow-hidden" style="padding:70px 24px 60px;">
+  <!-- 纸飞机装饰 -->
+  <svg class="plane1 absolute" style="top:60px;left:6%;width:46px;opacity:.75" viewBox="0 0 24 24" fill="#0ea5e9"><path d="M21.5 2.5L2.5 11l7 2.5L12 21l9.5-18.5zM12 13.5L9.5 11l9-5.5-6.5 8z"/></svg>
+  <svg class="plane2 absolute" style="top:130px;right:10%;width:36px;opacity:.6" viewBox="0 0 24 24" fill="#38bdf8"><path d="M21.5 2.5L2.5 11l7 2.5L12 21l9.5-18.5zM12 13.5L9.5 11l9-5.5-6.5 8z"/></svg>
+  <svg class="plane3 absolute" style="bottom:40px;left:15%;width:30px;opacity:.5" viewBox="0 0 24 24" fill="#7dd3fc"><path d="M21.5 2.5L2.5 11l7 2.5L12 21l9.5-18.5zM12 13.5L9.5 11l9-5.5-6.5 8z"/></svg>
+  <!-- 毕业帽装饰 -->
+  <svg class="grad-cap absolute" style="top:80px;right:18%;width:52px;opacity:.7" viewBox="0 0 24 24" fill="#0369a1"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm-7 10.18V17c0 1.66 3.13 3 7 3s7-1.34 7-3v-3.82l-7 3.82-7-3.82z"/></svg>
+  <svg class="grad-cap absolute" style="bottom:60px;right:6%;width:38px;opacity:.55;animation-delay:1.5s" viewBox="0 0 24 24" fill="#0ea5e9"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm-7 10.18V17c0 1.66 3.13 3 7 3s7-1.34 7-3v-3.82l-7 3.82-7-3.82z"/></svg>
+
+  <div class="max-w-5xl mx-auto text-center relative" style="z-index:2;">
+    <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:999px;background:var(--accent-soft);border:1px solid var(--accent);margin-bottom:22px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+      <span style="font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);font-weight:700;">Graduation Concert 2026</span>
+    </div>
+    <h1 style="font-size:clamp(48px,9vw,96px);font-weight:900;letter-spacing:.02em;line-height:1;background:linear-gradient(120deg,#0284c7,#0ea5e9,#38bdf8);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0;">FAREWELL</h1>
+    <p style="font-size:clamp(20px,3.5vw,30px);font-weight:700;margin:14px 0 8px;color:#075985;letter-spacing:.15em;">以乐作别 · 以曲起航</p>
+    <p style="font-size:15px;color:var(--muted);max-width:520px;margin:0 auto;line-height:1.8;">一场属于毕业生的音乐告别礼，用旋律封存青春，用音符开启未来。</p>
+  </div>
+</div>
+
+<!-- ============ 演唱会概要 ============ -->
+<div class="reveal max-w-5xl mx-auto px-6 mb-16">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+    <div style="width:36px;height:4px;border-radius:2px;background:var(--accent);"></div>
+    <h2 style="font-size:24px;font-weight:800;margin:0;color:var(--text);">演唱会概要</h2>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:16px;">
+    <div style="flex:1 1 220px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 4px 20px rgba(14,165,233,.08);border-top:3px solid var(--accent);">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;color:var(--accent);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;">时间 Time</span>
+      </div>
+      <p style="font-size:18px;font-weight:800;margin:0 0 4px;">19:30 开场 / 20:00 开始</p>
+      <p style="font-size:13px;color:var(--muted);margin:0;">请提前 30 分钟入场就座</p>
+    </div>
+    <div style="flex:1 1 220px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 4px 20px rgba(14,165,233,.08);border-top:3px solid var(--accent2);">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;color:var(--accent);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;">地点 Venue</span>
+      </div>
+      <p style="font-size:18px;font-weight:800;margin:0 0 4px;">欧克艺术厅</p>
+      <p style="font-size:13px;color:var(--muted);margin:0;">Ok Art Center · 吉隆坡 Kuala Lumpur</p>
+    </div>
+    <div style="flex:1 1 220px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 4px 20px rgba(14,165,233,.08);border-top:3px solid #7dd3fc;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;color:var(--accent);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+        <span style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;">主题 Theme</span>
+      </div>
+      <p style="font-size:18px;font-weight:800;margin:0 0 4px;">Farewell 毕业季</p>
+      <p style="font-size:13px;color:var(--muted);margin:0;">以乐作别，以曲起航</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 节目单（参考歌单风格） ============ -->
+<div class="reveal max-w-5xl mx-auto px-6 mb-16">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+    <div style="width:36px;height:4px;border-radius:2px;background:var(--accent);"></div>
+    <h2 style="font-size:24px;font-weight:800;margin:0;color:var(--text);">节目单 Song List</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;" id="songGrid"></div>
+</div>
+
+<!-- ============ 艺术厅布局 + 座位搜索 ============ -->
+<div class="reveal max-w-5xl mx-auto px-6 mb-16">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+    <div style="width:36px;height:4px;border-radius:2px;background:var(--accent);"></div>
+    <h2 style="font-size:24px;font-weight:800;margin:0;color:var(--text);">选座购票</h2>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px 20px;box-shadow:0 4px 24px rgba(14,165,233,.1);">
+    <!-- 舞台 -->
+    <div style="text-align:center;margin-bottom:24px;">
+      <div style="display:inline-block;padding:12px 60px;border-radius:10px;background:linear-gradient(135deg,#0ea5e9,#38bdf8);color:#fff;font-weight:800;letter-spacing:.3em;font-size:14px;box-shadow:0 6px 20px rgba(14,165,233,.35);">舞 台 STAGE</div>
+      <div style="height:6px;margin:8px auto 0;width:80%;border-radius:3px;background:linear-gradient(90deg,transparent,#bae6fd,transparent);"></div>
+    </div>
+
+    <!-- 座位区域 -->
+    <div id="seatMap" style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:24px;overflow-x:auto;padding-bottom:8px;"></div>
+
+    <!-- 图例 -->
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;font-size:12px;color:var(--muted);margin-bottom:24px;">
+      <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:4px;background:#fde68a;display:inline-block;"></span>VIP区 RM288</span>
+      <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:4px;background:#bfdbfe;display:inline-block;"></span>A区 RM188</span>
+      <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:4px;background:#a5f3fc;display:inline-block;"></span>B区 RM128</span>
+      <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:4px;background:#d9f99d;display:inline-block;"></span>C区 RM88</span>
+      <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:4px;background:#0ea5e9;display:inline-block;"></span>已选座位</span>
+    </div>
+
+    <!-- 搜索框 -->
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-bottom:16px;">
+      <input id="seatInput" type="text" placeholder="输入座位号，如 A-3-05 或 VIP-1-03" style="flex:1 1 260px;max-width:360px;padding:12px 18px;border-radius:12px;border:1.5px solid var(--border);font-size:14px;outline:none;background:#f0f9ff;color:var(--text);font-family:inherit;" onfocus="this.style.borderColor='#0ea5e9'" onblur="this.style.borderColor='var(--border)'">
+      <button id="searchBtn" style="padding:12px 28px;border-radius:12px;background:var(--accent-soft);border:1.5px solid var(--accent);color:var(--text);font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;">搜索座位</button>
+    </div>
+    <p id="searchHint" style="text-align:center;font-size:12px;color:var(--muted);margin:0 0 16px;">座位号格式：区域-排-号，例如 B-2-08、C-5-14</p>
+
+    <!-- 选中座位信息 -->
+    <div id="seatInfo" style="display:none;text-align:center;padding:14px;border-radius:12px;background:var(--accent-soft);border:1px solid var(--accent);margin-bottom:16px;">
+      <p style="margin:0;font-size:15px;font-weight:700;color:var(--text);">已选座位：<span id="seatInfoText" style="color:var(--accent);"></span></p>
+    </div>
+
+    <!-- 购买按钮 -->
+    <div style="text-align:center;">
+      <button id="buyBtn" disabled style="padding:14px 44px;border-radius:14px;font-size:16px;font-weight:800;cursor:not-allowed;background:#e2e8f0;color:#94a3b8;border:none;font-family:inherit;letter-spacing:.1em;">购买座位</button>
+    </div>
+
+    <!-- 门票弹窗区（点击购买后展开） -->
+    <div id="ticketWrap" style="display:none;margin-top:28px;" class="ticket-card">
+      <div style="text-align:center;margin-bottom:14px;">
+        <span style="display:inline-block;padding:6px 20px;border-radius:999px;background:#0ea5e9;color:#fff;font-size:13px;font-weight:700;letter-spacing:.2em;">购票成功 · 您的门票</span>
+      </div>
+      <div style="border:2px dashed var(--accent);border-radius:16px;padding:16px;background:linear-gradient(135deg,#f0f9ff,#e0f2fe);">
+        <img id="ticketImg" src="https://p19-flow-image-sign.ibyteimg.com/tos-mya-i-3rsxbfecgb/rc_gen_image/defbd0e2aff247efa26aad6c8adda206.jpeg~tplv-0es2k971ck-image.image?rcl=202610111700099A1ED55B0176546E06C0&rk3s=8e244e95&rrcfp=02a80fc2&x-expires=1794301242&x-signature=MvZgTnn%2B7zX7H%2BL7ywqshS7%2FmSc%3D" alt="演唱会门票" style="width:100%;border-radius:10px;display:block;" onerror="this.style.display='none'">
+        <p id="ticketSeatInfo" style="text-align:center;font-size:14px;font-weight:700;color:var(--text);margin:14px 0 0;"></p>
+      </div>
+      <div style="text-align:center;margin-top:14px;">
+        <button id="closeTicket" style="padding:10px 28px;border-radius:10px;background:var(--card);border:1px solid var(--border);color:var(--muted);font-weight:600;cursor:pointer;font-family:inherit;font-size:13px;">关闭门票</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 页脚 ============ -->
+<div style="text-align:center;padding:30px 24px 40px;border-top:1px solid var(--border);">
+  <p style="font-size:13px;color:var(--muted);margin:0;line-height:1.8;">Farewell Graduation Concert · 以乐作别，以曲起航<br>欧克艺术厅 Ok Art Center · Kuala Lumpur</p>
+</div>
+
+</div>
+</div>
+
+<script>
+(function(){
+  // ===== 节目单数据 =====
+  var songs = [
+    {no:'01',title:'那些年',artist:'胡夏'},
+    {no:'02',title:'起风了',artist:'买辣椒也用券'},
+    {no:'03',title:'平凡之路',artist:'朴树'},
+    {no:'04',title:'凤凰花开的路口',artist:'林志炫'},
+    {no:'05',title:'再见',artist:'张震岳'},
+    {no:'06',title:'夜空中最亮的星',artist:'逃跑计划'},
+    {no:'07',title:'入海',artist:'毛不易'},
+    {no:'08',title:'光阴的故事',artist:'罗大佑'},
+    {no:'09',title:'送别',artist:'经典合唱'}
+  ];
+  var grid = document.getElementById('songGrid');
+  var colors = ['#fde68a','#bfdbfe','#a5f3fc','#d9f99d','#fbcfe8','#c7d2fe','#fed7aa','#bbf7d0','#bae6fd'];
+  songs.forEach(function(s,i){
+    var card = document.createElement('div');
+    card.className = 'song-card';
+    card.style.cssText = 'background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center;';
+    card.innerHTML = '<div style="width:100%;aspect-ratio:1;border-radius:10px;background:linear-gradient(135deg,'+colors[i]+',#e0f2fe);display:flex;align-items:center;justify-content:center;margin-bottom:10px;position:relative;overflow:hidden;">'
+      + '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="1.8" opacity=".7"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>'
+      + '<span style="position:absolute;top:6px;left:8px;font-size:11px;font-weight:900;color:#0369a1;opacity:.5;">'+s.no+'</span></div>'
+      + '<p style="margin:0;font-size:13px;font-weight:800;color:var(--text);line-height:1.3;">'+s.title+'</p>'
+      + '<p style="margin:4px 0 0;font-size:11px;color:var(--muted);">'+s.artist+'</p>';
+    grid.appendChild(card);
+  });
+
+  // ===== 座位数据 =====
+  var zones = [
+    {key:'VIP',rows:2,seats:8,color:'#fde68a',price:'RM 288'},
+    {key:'A',rows:4,seats:12,color:'#bfdbfe',price:'RM 188'},
+    {key:'B',rows:5,seats:14,color:'#a5f3fc',price:'RM 128'},
+    {key:'C',rows:5,seats:14,color:'#d9f99d',price:'RM 88'}
+  ];
+  var seatMap = document.getElementById('seatMap');
+  var selectedSeat = null;
+  var allSeats = [];
+
+  zones.forEach(function(z){
+    var zoneLabel = document.createElement('div');
+    zoneLabel.style.cssText = 'font-size:11px;font-weight:800;letter-spacing:.3em;color:var(--muted);margin-top:6px;';
+    zoneLabel.textContent = z.key + ' 区 · ' + z.price;
+    seatMap.appendChild(zoneLabel);
+    for(var r=1;r<=z.rows;r++){
+      var row = document.createElement('div');
+      row.style.cssText = 'display:flex;gap:5px;align-items:center;';
+      var rowLabel = document.createElement('span');
+      rowLabel.style.cssText = 'font-size:10px;color:var(--muted);width:28px;text-align:right;font-weight:700;';
+      rowLabel.textContent = z.key+'-'+r;
+      row.appendChild(rowLabel);
+      for(var s=1;s<=z.seats;s++){
+        var seatId = z.key+'-'+r+'-'+(s<10?'0':'')+s;
+        var seat = document.createElement('div');
+        seat.className = 'seat';
+        seat.dataset.seat = seatId;
+        seat.dataset.zone = z.key;
+        seat.dataset.price = z.price;
+        seat.style.background = z.color;
+        seat.style.color = '#0c4a6e';
+        seat.title = seatId+' ('+z.price+')';
+        seat.textContent = s;
+        (function(sid,priceEl){
+          seat.addEventListener('click',function(){ selectSeat(sid); });
+        })(seatId);
+        row.appendChild(seat);
+        allSeats.push(seat);
+      }
+      seatMap.appendChild(row);
+    }
+  });
+
+  function normalize(str){ return str.toUpperCase().replace(/[\s\-_]/g,''); }
+
+  function selectSeat(seatId){
+    allSeats.forEach(function(el){ el.classList.remove('selected','highlight'); });
+    var target = allSeats.find(function(el){ return el.dataset.seat === seatId; });
+    if(!target) return false;
+    target.classList.add('selected');
+    selectedSeat = { id: seatId, zone: target.dataset.zone, price: target.dataset.price };
+    document.getElementById('seatInfo').style.display = 'block';
+    document.getElementById('seatInfoText').textContent = seatId + ' · ' + target.dataset.price;
+    var btn = document.getElementById('buyBtn');
+    btn.disabled = false;
+    btn.style.cssText = 'padding:14px 44px;border-radius:14px;font-size:16px;font-weight:800;cursor:pointer;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;font-family:inherit;letter-spacing:.1em;box-shadow:0 6px 20px rgba(14,165,233,.4);transition:transform .2s;';
+    btn.onmouseover = function(){ this.style.transform='scale(1.04)'; };
+    btn.onmouseout = function(){ this.style.transform='scale(1)'; };
+    return true;
+  }
+
+  // ===== 搜索 =====
+  document.getElementById('searchBtn').addEventListener('click', doSearch);
+  document.getElementById('seatInput').addEventListener('keydown', function(e){ if(e.key==='Enter') doSearch(); });
+  function doSearch(){
+    var val = document.getElementById('seatInput').value.trim();
+    var hint = document.getElementById('searchHint');
+    if(!val){ hint.textContent='请输入座位号'; hint.style.color='#dc2626'; return; }
+    var norm = normalize(val);
+    var found = allSeats.find(function(el){ return normalize(el.dataset.seat) === norm; });
+    if(found){
+      selectSeat(found.dataset.seat);
+      found.classList.add('highlight');
+      hint.textContent = '已找到座位 '+found.dataset.seat+'，已为您选中，可点击下方购买。';
+      hint.style.color = '#059669';
+      found.scrollIntoView({behavior:'smooth',block:'center'});
+    } else {
+      hint.textContent = '未找到该座位，请检查格式（如 A-3-05）。VIP区2排×8座，A区4排×12座，B/C区5排×14座。';
+      hint.style.color = '#dc2626';
+    }
+  }
+
+  // ===== 购买 → 显示门票 =====
+  var ticketUrl = 'https://p16-flow-image-sign.ibyteimg.com/tos-mya-i-uo7y4d541q/3e38f94826f549b68b9d0c2c4383458a.png~tplv-0es2k971ck-image.image?rcl=20261011171124199ED908073EB3666FC0&rk3s=8e244e95&rrcfp=935dee89&x-expires=1792314685&x-signature=9EhmeNIrzzz6bT2A5HseDT5xyuQ%3D';
+  document.getElementById('buyBtn').addEventListener('click', function(){
+    if(!selectedSeat) return;
+    document.getElementById('ticketImg').src = ticketUrl;
+    document.getElementById('ticketSeatInfo').textContent = '座位：' + selectedSeat.id + ' · 票价：' + selectedSeat.price + ' · 请截图保存门票';
+    var wrap = document.getElementById('ticketWrap');
+    wrap.style.display = 'block';
+    wrap.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('closeTicket').addEventListener('click', function(){
+    document.getElementById('ticketWrap').style.display = 'none';
+  });
+})();
+</script>
+</html>
